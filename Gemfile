@@ -62,3 +62,7 @@ end
 
 
 gem "rspec-rails", "~> 6.1"
+
+# CORS- Cross-Origin-Resource Sharing (Allows us to talk between different applications ex: REACT <=> Rails)
+gem 'rack-cors', :require => 'rack/cors'
+
