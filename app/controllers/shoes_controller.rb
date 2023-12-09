@@ -9,13 +9,22 @@ class ShoesController < ApplicationController
 
     def create
         shoe = Shoe.create(shoe_params)
-        render json: shoe
+        if shoe.valid?
+            render json: shoe
+        else
+            render json: shoe.errors, status: 422
+        end
     end
 
     def update 
         shoe = Shoe.find(params[:id])
         shoe.update(shoe_params)
-        render json: shoe
+        if shoe.valid?
+            render json: shoe
+        else
+            render json: shoe.errors, status: 422
+        end
+
     end
 
     def destroy
