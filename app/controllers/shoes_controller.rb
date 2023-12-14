@@ -5,6 +5,8 @@ class ShoesController < ApplicationController
     end
 
     def show
+        shoe = Shoe.find(params[:id])
+        render json:shoe 
     end
 
     def create
